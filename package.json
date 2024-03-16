@@ -1,0 +1,33 @@
+{
+  "name": "asset-field-management",
+  "version": "1.0.0",
+  "description": "Delivery hub management system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .  --ext .js",
+    "lint-fix": "eslint --fix .  --ext .js",
+    "format": "npx prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash-mule-dev/asset-field-management.git"
+  },
+  "author": "Akash Mule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash-mule-dev/asset-field-management/issues"
+  },
+  "homepage": "https://github.com/akash-mule-dev/asset-field-management#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0"
+  }
+}
