@@ -1,2 +1,2 @@
-sequelize model:create --name stores --attributes store_id:integer
+sequelize model:create --name stores --attributes store_id:integer store_pincode:integer
 sequelize db:migrate
