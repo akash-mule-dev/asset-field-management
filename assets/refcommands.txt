@@ -1,0 +1,19 @@
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string // create model
+sequelize db:drop; // removes the entire DB
+sequelize db:create // creates empty DB
+sequelize db:migrate // migrate all models in DB
+npx sequelize-cli db:migrate:undo:all // remove all tables from db
+
+
+update association of stores and addresses
+update key of phone --> PhoneNumber
+update key of riders_Id --> RiderId
+ipdate address table with cli commmand
+
+Model commands
+npx sequelize-cli model:generate --name Stores --attributes StoreId:integer,StoreName:string,StoreAddress:Integer,StorePhoneNumber:integer 
+npx sequelize-cli model:generate --name Products --attributes ProductId:integer,FkStoreId:integer,ProductName:string,ProductDescription:string,ProductPrice:integer
+npx sequelize-cli model:generate --name Riders --attributes RiderId:integer,RiderName:string,RiderEmail:string,RiderPassword:string,RiderPhoneNumber:integer,RiderAddress:Integer
+npx sequelize-cli model:generate --name Customers --attributes CustomerId:integer,CustomerName:string,CustomerEmail:string,CustomerPassword:string,CustomerPhoneNumber:integer,CustomerAddress:integer
+npx sequelize-cli model:generate --name Orders --attributes OrderId:integer,FkRiderId:integer,OrderTotal:integer,DeliveryStatus:string,FkCustomerId:integer
+npx sequelize-cli model:generate --name Addresses --attributes AddressId:integer,FkCustomerId:integer,FkRiderId:integer,FkStoreId:string,State:string,city:string,street:string,Pincode:integer,Latitude:integer,Longitude:integer

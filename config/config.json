@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "rootroot",
-    "database": "school",
+    "database": "delivery_hub_management",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
