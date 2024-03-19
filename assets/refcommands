@@ -1,2 +1,3 @@
-sequelize model:create --name stores --attributes store_id:integer store_pincode:integer
-sequelize db:migrate
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string // create model
+sequelize db:migrate // migrate all models in DB
+npx sequelize-cli db:migrate:undo:all // remove all tables from db
