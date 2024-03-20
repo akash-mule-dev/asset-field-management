@@ -17,3 +17,11 @@ npx sequelize-cli model:generate --name Riders --attributes RiderId:integer,Ride
 npx sequelize-cli model:generate --name Customers --attributes CustomerId:integer,CustomerName:string,CustomerEmail:string,CustomerPassword:string,CustomerPhoneNumber:integer,CustomerAddress:integer
 npx sequelize-cli model:generate --name Orders --attributes OrderId:integer,FkRiderId:integer,OrderTotal:integer,DeliveryStatus:string,FkCustomerId:integer,FkStoreId:integer,FkProductId:integer
 npx sequelize-cli model:generate --name Addresses --attributes AddressId:integer,FkCustomerId:integer,FkRiderId:integer,FkStoreId:string,State:string,city:string,street:string,Pincode:integer,Latitude:integer,Longitude:integer
+
+Seed Creation
+npx sequelize-cli seed:create --name Stores
+npx sequelize-cli seed:create --name Riders
+npx sequelize-cli seed:create --name Customers
+npx sequelize-cli seed:create --name Addresses
+npx sequelize-cli seed:create --name Products 
+npx sequelize-cli seed:create --name Orders
