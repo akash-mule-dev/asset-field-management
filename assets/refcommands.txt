@@ -11,7 +11,7 @@ update key of riders_Id --> RiderId
 ipdate address table with cli commmand
 
 Model commands
-npx sequelize-cli model:generate --name Stores --attributes StoreId:integer,StoreName:string,StoreAddress:Integer,StorePhoneNumber:integer 
+npx sequelize-cli model:generate --name Stores --attributes StoreId:integer,StoreName:string,FkAddressId:Integer,StorePhoneNumber:integer 
 npx sequelize-cli model:generate --name Products --attributes ProductId:integer,FkStoreId:integer,ProductName:string,ProductDescription:string,ProductPrice:integer
 npx sequelize-cli model:generate --name Riders --attributes RiderId:integer,RiderName:string,RiderEmail:string,RiderPassword:string,RiderPhoneNumber:integer,RiderAddress:Integer
 npx sequelize-cli model:generate --name Customers --attributes CustomerId:integer,CustomerName:string,CustomerEmail:string,CustomerPassword:string,CustomerPhoneNumber:integer,CustomerAddress:integer

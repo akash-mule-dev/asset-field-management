@@ -12,7 +12,7 @@ module.exports = {
       StoreName: {
         type: Sequelize.STRING,
       },
-      StoreAddress: {
+      FkAddressId: {
         type: Sequelize.INTEGER,
       },
       StorePhoneNumber: {
