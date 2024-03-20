@@ -21,6 +21,12 @@ module.exports = {
       FkCustomerId: {
         type: Sequelize.INTEGER,
       },
+      FkStoreId: {
+        type: Sequelize.INTEGER,
+      },
+      FkProductId: {
+        type: Sequelize.INTEGER,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
