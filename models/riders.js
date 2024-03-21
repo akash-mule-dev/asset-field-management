@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Riders.init(
     {
-      RiderId: DataTypes.INTEGER,
+      RiderId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+      },
       RiderName: DataTypes.STRING,
       RiderEmail: DataTypes.STRING,
       RiderPassword: DataTypes.STRING,

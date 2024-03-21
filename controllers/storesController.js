@@ -1,9 +1,9 @@
-const { stores } = require('../models');
+const { Stores } = require('../models');
 
 exports.getAllStores = async (req, res) => {
   console.log('Get Request');
   try {
-    const usersList = await stores.findAll();
+    const usersList = await Stores.findAll();
     console.log(usersList);
     res.json(usersList);
   } catch (error) {

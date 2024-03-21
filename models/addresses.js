@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Addresses.init(
     {
-      AddressId: DataTypes.INTEGER,
+      AddressId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+      },
       FkCustomerId: DataTypes.INTEGER,
       FkRiderId: DataTypes.INTEGER,
       FkStoreId: DataTypes.STRING,

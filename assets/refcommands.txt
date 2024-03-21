@@ -25,3 +25,5 @@ npx sequelize-cli seed:create --name Customers
 npx sequelize-cli seed:create --name Addresses
 npx sequelize-cli seed:create --name Products 
 npx sequelize-cli seed:create --name Orders
+npx sequelize db:seed:all
+npx sequelize db:seed:undo:all
