@@ -2,9 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const db = require('./models');
-const { stores } = require('./models');
-// const todoRoutes = require('./routes/todoRoutes');
 const apirouter = require('./routes');
+const logger = require('./logging/index.js');
 
 const app = express();
 
@@ -29,7 +28,8 @@ const PORT = process.env.PORT || 8080;
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-    stores.create({ store_id: 123 });
+    logger.info(`Server is running on port  ${PORT}.`);
+    // logger.warn(`Server is running on port  ${PORT}.`);
+    // logger.debug(`Server is running on port  ${PORT}.`);
   });
 });
