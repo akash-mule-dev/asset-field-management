@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       RiderEmail: DataTypes.STRING,
       RiderPassword: DataTypes.STRING,
       RiderPhoneNumber: DataTypes.INTEGER,
-      RiderAddress: DataTypes.INTEGER,
     },
     {
       sequelize,

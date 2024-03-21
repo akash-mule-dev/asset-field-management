@@ -16,7 +16,7 @@ module.exports = {
       'Riders',
       [
         {
-          RiderId: 3,
+          RiderId: 1,
           RiderName: 'Name35',
           RiderEmail: 'email11@example.com',
           RiderPassword: '58228296',
@@ -25,7 +25,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 17,
+          RiderId: 2,
           RiderName: 'Name100',
           RiderEmail: 'email69@example.com',
           RiderPassword: '21567176',
@@ -34,7 +34,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 77,
+          RiderId: 3,
           RiderName: 'Name23',
           RiderEmail: 'email45@example.com',
           RiderPassword: '4675392',
@@ -43,7 +43,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 35,
+          RiderId: 4,
           RiderName: 'Name14',
           RiderEmail: 'email59@example.com',
           RiderPassword: '9992837',
@@ -52,7 +52,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 58,
+          RiderId: 5,
           RiderName: 'Name59',
           RiderEmail: 'email7@example.com',
           RiderPassword: '36783780',
@@ -61,7 +61,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 82,
+          RiderId: 6,
           RiderName: 'Name80',
           RiderEmail: 'email1@example.com',
           RiderPassword: '16122128',
@@ -70,7 +70,7 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          RiderId: 26,
+          RiderId: 7,
           RiderName: 'Name7',
           RiderEmail: 'email48@example.com',
           RiderPassword: '2836131',

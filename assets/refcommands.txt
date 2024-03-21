@@ -11,10 +11,10 @@ update key of riders_Id --> RiderId
 ipdate address table with cli commmand
 
 Model commands
-npx sequelize-cli model:generate --name Stores --attributes StoreId:integer,StoreName:string,FkAddressId:Integer,StorePhoneNumber:integer 
+npx sequelize-cli model:generate --name Stores --attributes StoreId:integer,StoreName:string,StorePhoneNumber:integer 
 npx sequelize-cli model:generate --name Products --attributes ProductId:integer,FkStoreId:integer,ProductName:string,ProductDescription:string,ProductPrice:integer
-npx sequelize-cli model:generate --name Riders --attributes RiderId:integer,RiderName:string,RiderEmail:string,RiderPassword:string,RiderPhoneNumber:integer,RiderAddress:Integer
-npx sequelize-cli model:generate --name Customers --attributes CustomerId:integer,CustomerName:string,CustomerEmail:string,CustomerPassword:string,CustomerPhoneNumber:integer,FkAddressId:integer
+npx sequelize-cli model:generate --name Riders --attributes RiderId:integer,RiderName:string,RiderEmail:string,RiderPassword:string,RiderPhoneNumber:integer
+npx sequelize-cli model:generate --name Customers --attributes CustomerId:integer,CustomerName:string,CustomerEmail:string,CustomerPassword:string,CustomerPhoneNumber:integer
 npx sequelize-cli model:generate --name Orders --attributes OrderId:integer,FkRiderId:integer,OrderTotal:integer,DeliveryStatus:string,FkCustomerId:integer,FkStoreId:integer,FkProductId:integer
 npx sequelize-cli model:generate --name Addresses --attributes AddressId:integer,FkCustomerId:integer,FkRiderId:integer,FkStoreId:string,State:string,city:string,street:string,Pincode:integer,Latitude:integer,Longitude:integer
 

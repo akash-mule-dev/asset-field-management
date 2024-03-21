@@ -16,8 +16,8 @@ module.exports = {
       'Products',
       [
         {
-          ProductId: 36,
-          FkStoreId: 51,
+          ProductId: 1,
+          FkStoreId: 5,
           ProductName: 'Iphone',
           ProductDescription: 'Description19',
           ProductPrice: 201,
@@ -25,8 +25,8 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          ProductId: 45,
-          FkStoreId: 51,
+          ProductId: 2,
+          FkStoreId: 5,
           ProductName: 'Moto',
           ProductDescription: 'Description94',
           ProductPrice: 503,
@@ -34,8 +34,8 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          ProductId: 47,
-          FkStoreId: 51,
+          ProductId: 3,
+          FkStoreId: 3,
           ProductName: 'Iphone',
           ProductDescription: 'Description59',
           ProductPrice: 561,
@@ -43,8 +43,8 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          ProductId: 61,
-          FkStoreId: 51,
+          ProductId: 4,
+          FkStoreId: 1,
           ProductName: 'Samsung',
           ProductDescription: 'Description23',
           ProductPrice: 339,
@@ -52,8 +52,8 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          ProductId: 79,
-          FkStoreId: 51,
+          ProductId: 5,
+          FkStoreId: 4,
           ProductName: 'Pixel',
           ProductDescription: 'Description31',
           ProductPrice: 404,
@@ -61,8 +61,8 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          ProductId: 51,
-          FkStoreId: 51,
+          ProductId: 6,
+          FkStoreId: 3,
           ProductName: 'Samsung',
           ProductDescription: 'Description85',
           ProductPrice: 290,
