@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'Orders',
+      'Addresses',
       [
         {
           AddressId: 13,
@@ -26,6 +26,8 @@ module.exports = {
           Pincode: 39666,
           Latitude: -30.255946,
           Longitude: -25.118892,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 40,
@@ -38,6 +40,8 @@ module.exports = {
           Pincode: 19820,
           Latitude: 51.564986,
           Longitude: 43.517927,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 5,
@@ -50,6 +54,8 @@ module.exports = {
           Pincode: 26419,
           Latitude: 83.06657,
           Longitude: -82.819043,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 92,
@@ -62,6 +68,8 @@ module.exports = {
           Pincode: 35503,
           Latitude: 12.599858,
           Longitude: 73.960604,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 75,
@@ -74,6 +82,8 @@ module.exports = {
           Pincode: 10731,
           Latitude: 8.412222,
           Longitude: 47.948709,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 69,
@@ -86,6 +96,8 @@ module.exports = {
           Pincode: 14194,
           Latitude: 71.83524,
           Longitude: 25.874433,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 24,
@@ -98,6 +110,8 @@ module.exports = {
           Pincode: 98730,
           Latitude: -47.652813,
           Longitude: -59.820569,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 42,
@@ -110,6 +124,8 @@ module.exports = {
           Pincode: 89253,
           Latitude: -83.808281,
           Longitude: 17.456714,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 57,
@@ -122,6 +138,8 @@ module.exports = {
           Pincode: 77858,
           Latitude: -24.930657,
           Longitude: 61.986165,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           AddressId: 4,
@@ -134,6 +152,8 @@ module.exports = {
           Pincode: 76013,
           Latitude: -30.052099,
           Longitude: 27.772219,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
       ],
       {},
@@ -147,5 +167,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Addresses', null, {});
   },
 };

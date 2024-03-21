@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.addresses, { as: 'FkCustomerId', constraints: false });
     }
   }
   Customers.init(
@@ -19,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       CustomerEmail: DataTypes.STRING,
       CustomerPassword: DataTypes.STRING,
       CustomerPhoneNumber: DataTypes.INTEGER,
-      CustomerAddress: DataTypes.INTEGER,
+      FkAddressId: DataTypes.INTEGER,
     },
     {
       sequelize,

@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      'Stores',
+      'Orders',
       [
         {
           OrderId: 1,
@@ -23,6 +23,8 @@ module.exports = {
           FkCustomerId: 51,
           FkStoreId: 82,
           FkProductId: 1,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           OrderId: 2,
@@ -32,6 +34,8 @@ module.exports = {
           FkCustomerId: 51,
           FkStoreId: 82,
           FkProductId: 2,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           OrderId: 3,
@@ -41,6 +45,8 @@ module.exports = {
           FkCustomerId: 51,
           FkStoreId: 82,
           FkProductId: 3,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
         {
           OrderId: 4,
@@ -50,6 +56,8 @@ module.exports = {
           FkCustomerId: 51,
           FkStoreId: 82,
           FkProductId: 4,
+          createdAt: '9999-12-31 23:59:59',
+          updatedAt: '9999-12-31 23:59:59',
         },
       ],
       {},
@@ -63,5 +71,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Orders', null, {});
   },
 };

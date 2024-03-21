@@ -21,7 +21,7 @@ module.exports = {
       CustomerPhoneNumber: {
         type: Sequelize.INTEGER,
       },
-      CustomerAddress: {
+      FkAddressId: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
