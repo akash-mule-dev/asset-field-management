@@ -7,10 +7,25 @@ class CustomersRepository extends CrudRepository {
     super(Customers);
   }
 
+  /**
+   * A function to asynchronously retrieve all customers.
+   *
+   * @return {Promise} A Promise that resolves to the collection of customers.
+   */
   async getAllCustomers() {
     console.log('CustomersRepository : Fetching customers CRUD Repo');
     const customersCollection = await this.getAll();
     return customersCollection;
+  }
+
+  /**
+   * Retrieves a customer by their ID.
+   *
+   * @param {number} id - The ID of the customer.
+   * @return {Promise} A promise that resolves to the customer object.
+   */
+  async getCustomerById(id) {
+    return await this.get(id);
   }
 }
 

@@ -34,7 +34,10 @@ class CrudRepository {
 
   async getAll() {
     const response = await this.model.findAll();
-    console.log('response ::', response);
+    if (!response) {
+      console.log('response ::', response);
+      throw new AppError('Not able to find the resource', status.NOT_FOUND);
+    }
     return response;
   }
 
