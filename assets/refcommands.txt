@@ -27,3 +27,7 @@ npx sequelize-cli seed:create --name Products
 npx sequelize-cli seed:create --name Orders
 npx sequelize db:seed:all
 npx sequelize db:seed:undo:all
+
+Docker 
+docker build -t akash341/nodeapp:1.0 . // build image
+/Users/akashmule/Downloads/dashmin-1.0.0 // run image
