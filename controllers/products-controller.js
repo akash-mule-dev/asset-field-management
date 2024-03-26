@@ -1,11 +1,11 @@
 const ProductsRepository = require('../repository/products-repository');
 const { commonUtil } = require('../utils');
-
-const productsRepository = new ProductsRepository();
+const { ProductsService } = require('../services');
+const productsService = new ProductsService(new ProductsRepository());
 
 async function getAllProducts(req, res) {
   try {
-    const productsColleciton = await productsRepository.getAllProducts();
+    const productsColleciton = await productsService.getAllProducts();
     return commonUtil.updateSuccessObject(res, productsColleciton);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);

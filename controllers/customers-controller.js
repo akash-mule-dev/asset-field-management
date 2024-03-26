@@ -1,8 +1,9 @@
-const { Addresses } = require('../models');
 const CustomersRepository = require('../repository/customers-repository');
+
+const { CustomersService } = require('../services/index');
 const { commonUtil } = require('../utils');
 
-const customersRepository = new CustomersRepository();
+const customersService = new CustomersService(new CustomersRepository());
 
 /**
  * Retrieves all customers from the customers repository.
@@ -13,9 +14,7 @@ const customersRepository = new CustomersRepository();
  */
 async function getAllCustomers(req, res) {
   try {
-    const customersColleciton = await customersRepository.getAllCustomers({
-      include: { model: Addresses, as: 'customerAddresses' },
-    });
+    const customersColleciton = await customersService.getAllCustomers();
     return commonUtil.updateSuccessObject(res, customersColleciton);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
@@ -30,12 +29,9 @@ async function getAllCustomers(req, res) {
  * @returns {Promise<Object>} The customer object or an error object.
  */
 async function getCustomerById(req, res) {
-  const id = req.params.id;
   try {
-    const customer = await customersRepository.getCustomerById(id);
-    const customerAddresses = await customer.getCustomerAddresses();
-    customer.setDataValue('customerAddresses', customerAddresses);
-    return commonUtil.updateSuccessObject(res, customer);
+    const customerDetails = await customersService.getCustomerById(req);
+    return commonUtil.updateSuccessObject(res, customerDetails);
   } catch (error) {
     console.log(error);
     return commonUtil.updateErrorObject(res, error);

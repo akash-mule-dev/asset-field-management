@@ -1,9 +1,10 @@
 const OrdersRepository = require('../repository/orders-repository');
+const { OrdersService } = require('../services');
 const { commonUtil } = require('../utils');
-const ordersRepository = new OrdersRepository();
+const ordersService = new OrdersService(new OrdersRepository());
 async function getAllOrders(req, res) {
   try {
-    const ordersCollection = await ordersRepository.getAllOrders();
+    const ordersCollection = await ordersService.getAllOrders();
     return commonUtil.updateSuccessObject(res, ordersCollection);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
@@ -12,13 +13,7 @@ async function getAllOrders(req, res) {
 
 async function getCustomerOrdersByCustomerId(req, res) {
   try {
-    const customerId = req.params.id;
-    console.log('Customer id :', customerId);
-    const ordersCollection = await ordersRepository.getAllOrders({
-      where: {
-        fkCustomerId: customerId,
-      },
-    });
+    const ordersCollection = await ordersService.getCustomerOrdersByCustomerId(req);
     return commonUtil.updateSuccessObject(res, ordersCollection);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
@@ -27,13 +22,7 @@ async function getCustomerOrdersByCustomerId(req, res) {
 
 async function getStoreOrdersByStoreId(req, res) {
   try {
-    const storeId = req.params.id;
-    console.log('Store id :', storeId);
-    const ordersCollection = await ordersRepository.getAllOrders({
-      where: {
-        fkStoreId: storeId,
-      },
-    });
+    const ordersCollection = await ordersService.getStoreOrdersByStoreId(req);
     return commonUtil.updateSuccessObject(res, ordersCollection);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
