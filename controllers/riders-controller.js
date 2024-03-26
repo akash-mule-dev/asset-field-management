@@ -1,10 +1,11 @@
 const RidersRepository = require('../repository/riders-repository');
 const { commonUtil } = require('../utils');
+const { RidersService } = require('../services');
 
-const ridersRepository = new RidersRepository();
+const ridersService = new RidersService(new RidersRepository());
 async function getAllRiders(req, res) {
   try {
-    const ridersCollection = await ridersRepository.getAllRiders();
+    const ridersCollection = await ridersService.getAllRiders();
     return commonUtil.updateSuccessObject(res, ridersCollection);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
@@ -13,7 +14,7 @@ async function getAllRiders(req, res) {
 
 function getAllAvailableRiders(req, res) {
   try {
-    const ridersCollection = ridersRepository.getAllRiders();
+    const ridersCollection = ridersService.getAllRiders();
     return commonUtil.updateSuccessObject(res, ridersCollection);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
