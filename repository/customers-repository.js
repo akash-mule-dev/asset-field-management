@@ -12,9 +12,9 @@ class CustomersRepository extends CrudRepository {
    *
    * @return {Promise} A Promise that resolves to the collection of customers.
    */
-  async getAllCustomers() {
+  async getAllCustomers(data) {
     console.log('CustomersRepository : Fetching customers CRUD Repo');
-    const customersCollection = await this.getAll();
+    const customersCollection = await this.getAll(data);
     return customersCollection;
   }
 

@@ -1,3 +1,4 @@
+const { Addresses } = require('../models');
 const CustomersRepository = require('../repository/customers-repository');
 const { commonUtil } = require('../utils');
 
@@ -12,7 +13,9 @@ const customersRepository = new CustomersRepository();
  */
 async function getAllCustomers(req, res) {
   try {
-    const customersColleciton = await customersRepository.getAllCustomers();
+    const customersColleciton = await customersRepository.getAllCustomers({
+      include: { model: Addresses, as: 'customerAddresses' },
+    });
     return commonUtil.updateSuccessObject(res, customersColleciton);
   } catch (error) {
     return commonUtil.updateErrorObject(res, error);
@@ -30,6 +33,8 @@ async function getCustomerById(req, res) {
   const id = req.params.id;
   try {
     const customer = await customersRepository.getCustomerById(id);
+    const customerAddresses = await customer.getCustomerAddresses();
+    customer.setDataValue('customerAddresses', customerAddresses);
     return commonUtil.updateSuccessObject(res, customer);
   } catch (error) {
     console.log(error);

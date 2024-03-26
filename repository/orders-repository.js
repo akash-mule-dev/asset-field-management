@@ -7,10 +7,8 @@ class OrdersRepository extends CrudRepository {
     this.Orders = Orders;
   }
 
-  getAllOrders() {
-    return this.getAll();
+  getAllOrders(data) {
+    return this.getAll(data);
   }
-
-  getOrdersByCustomerId(id) {}
 }
 module.exports = OrdersRepository;

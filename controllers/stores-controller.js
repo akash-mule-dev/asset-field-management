@@ -21,8 +21,8 @@ exports.getStoreById = async (req, res) => {
   logger.info(`Fetching details of Store ${id}`);
   try {
     const store = await storesRepository.getStoreByStoreId(id);
-    let address = await store.getCustomerAddress();
-    store.setDataValue('customerAddress', address);
+    let address = await store.getStoreAddress();
+    store.setDataValue('storeAddress', address);
     if (store) {
       commonUtil.updateSuccessObject(res, store);
     } else {
