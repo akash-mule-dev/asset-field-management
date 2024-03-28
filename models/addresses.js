@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       AddressId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
       },
       FkCustomerId: DataTypes.INTEGER,

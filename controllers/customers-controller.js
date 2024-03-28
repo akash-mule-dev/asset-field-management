@@ -38,7 +38,17 @@ async function getCustomerById(req, res) {
   }
 }
 
+async function createCustomer(req, res) {
+  try {
+    const customerDetails = await customersService.createCustomer(req);
+    return commonUtil.updateSuccessObject(res, customerDetails);
+  } catch (error) {
+    console.log(error);
+    return commonUtil.updateErrorObject(res, error);
+  }
+}
 module.exports = {
   getAllCustomers,
   getCustomerById,
+  createCustomer,
 };

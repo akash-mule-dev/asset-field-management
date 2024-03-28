@@ -32,6 +32,15 @@ class CustomersService {
     customerDetails.setDataValue('customerAddresses', customerAddresses);
     return customerDetails;
   }
+
+  async createCustomer(req) {
+    const customerDetailsToBeCreated = req.body;
+    console.log('customerDetailsToBeCreated', customerDetailsToBeCreated);
+    const customerDetails = await this.customersRepository.create(customerDetailsToBeCreated);
+    const customerAddresses = await customerDetails.getCustomerAddresses();
+    customerDetails.setDataValue('customerAddresses', customerAddresses);
+    return customerDetails;
+  }
 }
 
 module.exports = CustomersService;

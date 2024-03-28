@@ -27,6 +27,10 @@ class CustomersRepository extends CrudRepository {
   async getCustomerById(id) {
     return await this.get(id);
   }
+
+  async createCustomer(data) {
+    return this.create(data);
+  }
 }
 
 module.exports = CustomersRepository;

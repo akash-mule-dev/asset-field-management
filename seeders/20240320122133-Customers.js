@@ -16,7 +16,6 @@ module.exports = {
       'Customers',
       [
         {
-          CustomerId: 1,
           CustomerName: 'Name13',
           CustomerEmail: 'email18@example.com',
           CustomerPassword: '37136225',
@@ -25,7 +24,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 2,
           CustomerName: 'Name74',
           CustomerEmail: 'email19@example.com',
           CustomerPassword: '93683682',
@@ -34,7 +32,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 4,
           CustomerName: 'Name53',
           CustomerEmail: 'email37@example.com',
           CustomerPassword: '43318455',
@@ -43,7 +40,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 6,
           CustomerName: 'Name98',
           CustomerEmail: 'email22@example.com',
           CustomerPassword: '64991430',
@@ -52,7 +48,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 8,
           CustomerName: 'Name23',
           CustomerEmail: 'email39@example.com',
           CustomerPassword: '15678345',
@@ -61,7 +56,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 9,
           CustomerName: 'Name81',
           CustomerEmail: 'email17@example.com',
           CustomerPassword: '32829737',
@@ -70,7 +64,6 @@ module.exports = {
           updatedAt: '9999-12-31 23:59:59',
         },
         {
-          CustomerId: 10,
           CustomerName: 'Name67',
           CustomerEmail: 'email75@example.com',
           CustomerPassword: '76616249',

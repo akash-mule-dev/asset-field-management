@@ -11,11 +11,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.Addresses, {
         foreignKey: 'fkCustomerId',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
         as: 'customerAddresses',
+        sourceKey: 'CustomerId',
       });
       this.hasMany(models.Orders, {
         foreignKey: 'fkCustomerId',
         as: 'customerOrders',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        sourceKey: 'CustomerId',
       });
     }
   }
@@ -23,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       CustomerId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
       },
       CustomerName: DataTypes.STRING,
       CustomerEmail: DataTypes.STRING,
