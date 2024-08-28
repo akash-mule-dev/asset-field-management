@@ -18,6 +18,12 @@ npx sequelize-cli model:generate --name Customers --attributes CustomerId:intege
 npx sequelize-cli model:generate --name Orders --attributes OrderId:integer,FkRiderId:integer,OrderTotal:integer,DeliveryStatus:string,FkCustomerId:integer,FkStoreId:integer,FkProductId:integer
 npx sequelize-cli model:generate --name Addresses --attributes AddressId:integer,FkCustomerId:integer,FkRiderId:integer,FkStoreId:string,State:string,city:string,street:string,Pincode:integer,Latitude:integer,Longitude:integer
 
+Migration command 
+npx sequelize-cli migration:generate --name <migration-name>
+npx sequelize-cli migration:generate --name create-customers-table
+npx sequelize-cli db:migrate --name 20240321052526-create-customers
+
+
 Seed Creation
 npx sequelize-cli seed:create --name Stores
 npx sequelize-cli seed:create --name Riders
@@ -31,3 +37,7 @@ npx sequelize db:seed:undo:all
 Docker 
 docker build -t akash341/nodeapp:1.0 . // build image
 /Users/akashmule/Downloads/dashmin-1.0.0 // run image
+
+
+generation seq should be 
+Customers riders manageres stores producrs -->

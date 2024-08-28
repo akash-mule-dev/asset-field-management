@@ -2,44 +2,48 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Riders extends Model {
+  class Managers extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Define associations
-      this.hasMany(models.Orders, {
-        foreignKey: 'fkRiderId',
-        as: 'riderOrders',
+      // Define associations if any
+      // For example, if managers have many stores:
+      this.hasMany(models.Stores, {
+        foreignKey: 'fkManagerId',
+        as: 'managedStores',
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
       });
+
       this.hasOne(models.Addresses, {
-        foreignKey: 'fkRiderId',
-        as: 'homeAddress',
+        foreignKey: 'fkManagerId',
+        as: 'managerAddress',
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
       });
     }
   }
 
-  Riders.init(
+  Managers.init(
     {
-      RiderId: {
+      ManagerId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      RiderName: {
+      ManagerName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      RiderEmail: {
+      ManagerEmail: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
       },
-      RiderPhoneNumber: {
+      ManagerPhoneNumber: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -50,10 +54,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Riders',
-      tableName: 'riders',
+      modelName: 'Managers',
+      tableName: 'managers',
     },
   );
 
-  return Riders;
+  return Managers;
 };

@@ -1,48 +1,59 @@
 'use strict';
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Orders extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // Define associations
       this.belongsTo(models.Customers, {
         foreignKey: 'fkCustomerId',
-        as: 'customerDetails',
+        as: 'customer',
       });
-
-      this.belongsTo(models.Stores, {
-        foreignKey: 'fkStoreId',
-        as: 'storeDetails',
-      });
-
       this.belongsTo(models.Riders, {
         foreignKey: 'fkRiderId',
-        as: 'riderDetails',
+        as: 'rider',
       });
+      this.hasMany(models.OrderItems, {
+        foreignKey: 'fkOrderId',
+        as: 'orderItems',
+      });
+      // this.hasMany(models.DeliveryData, {
+      //   foreignKey: 'fkOrderId',
+      //   as: 'deliveryData',
+      // });
     }
   }
+
   Orders.init(
     {
       OrderId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
       },
-      FkRiderId: DataTypes.INTEGER,
-      OrderTotal: DataTypes.INTEGER,
-      DeliveryStatus: DataTypes.STRING,
-      FkCustomerId: DataTypes.INTEGER,
-      FkStoreId: DataTypes.INTEGER,
-      FkProductId: DataTypes.INTEGER,
+      OrderDate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      Status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      fkCustomerId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      fkRiderId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
     },
     {
       sequelize,
       modelName: 'Orders',
+      tableName: 'orders',
     },
   );
+
   return Orders;
 };
