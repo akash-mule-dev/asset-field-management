@@ -7,10 +7,10 @@ const ordersRouter = require('./order-routes');
 
 const router = express.Router();
 
-router.use('/stores', storesRouter);
-router.use('/customers', customerRouter);
 router.use('/products', productsRouter);
 router.use('/riders', ridersRouter);
 router.use('/orders', ordersRouter);
+router.use('/stores', storesRouter);
+router.use('/customers', customerRouter);
 
 module.exports = router;
